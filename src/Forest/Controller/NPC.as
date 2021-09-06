@@ -10,7 +10,6 @@ package Controller
         public var rootClass:MovieClip;
         private var parameters:Array;
         public var isProp:Boolean = true;
-        // public var objSettings:Object;
         public var targetNPC:Object;
         public var btnButton:SimpleButton;
         public var npcDisplay:DisplayObject;
