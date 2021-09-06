@@ -43,11 +43,6 @@ package Controller
             }
 
             this.btnButton.y = this.npcDisplay.y - 75;
-
-            // if (this.rootClass != root) {
-            //     this.objSettings = this.rootClass.world.map.luminiNpcs[this.parameters[0]].Dialogue;
-            // }
-
             buttonMode = false; // true
             this.npcDisplay.addEventListener(MouseEvent.MOUSE_OVER, this.onOver);
             this.npcDisplay.addEventListener(MouseEvent.MOUSE_OUT, this.onOut);
@@ -57,7 +52,6 @@ package Controller
         public function onClick(event: MouseEvent): void
         {
             this.rootClass.mixer.playSound("Good");
-            // this.targetNPC = this.parameters[0];
             this.rootClass.world.map.targetNPC = this.parameters[0];
             this.rootClass.world.openApop({
                 npcLinkage:this.parameters[0] + "_NPC", 
