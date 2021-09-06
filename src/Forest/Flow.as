@@ -31,10 +31,10 @@
             if (parent == stage) {
                 return;
             }
-            var map:* = MovieClip(parent);
-            trace("[Agathosune] (SCOPE): " + map.name);
-            trace("[Agathosune] (VARIABLES): " + map.strFrame);
-            gotoAndPlay(map.strFrame);
+            var local1:* = MovieClip(parent);
+            trace("[Agathosune] (SCOPE): " + local1.name);
+            trace("[Agathosune] (VARIABLES): " + local1.strFrame);
+            gotoAndPlay(local1.strFrame);
 		}
 		
 		internal function Enter()
