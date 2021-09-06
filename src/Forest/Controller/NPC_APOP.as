@@ -24,7 +24,11 @@
 						Name:"Starter Shop", 
 						Action:"Shop", 
 						Value:1
-					}]
+					}, {
+                        Name:"Quest", 
+						Action:"Quest", 
+						Value:"1,2,3"
+                    }]
 				}
 			},
 
@@ -57,7 +61,7 @@
         public function setupVisibility()
         {
             var _loc_1:* = 0;
-            while (_loc_1 < 1) {
+            while (_loc_1 < 3) {
                 this["btnButton" + _loc_1].visible = false;
                 _loc_1 = _loc_1 + 1;
             }
