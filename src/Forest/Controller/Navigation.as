@@ -17,8 +17,7 @@ package Controller
         {
             this.visible = false;
             addEventListener("enter", this.onEnter);
-            return;
-        }// end function
+        }
 
         public function onEnter(event:Event)
         {
@@ -26,8 +25,6 @@ package Controller
             this.tCell = this.rCell == "" ? (this.parameters[0]) : (this.rCell);
             this.tPad = this.rPad == "" ? (this.parameters[1]) : (this.rPad);
             MovieClip(parent.parent).moveToCell(this.tCell, this.tPad);
-            return;
-        }// end function
-
+        }
     }
 }

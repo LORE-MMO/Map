@@ -36,7 +36,6 @@
             trace("[Agathosune] (VARIABLES): " + map.strFrame);
             gotoAndPlay(map.strFrame);
 		}
-        
 		
 		internal function Enter()
         {
@@ -60,7 +59,7 @@
 
 		public function onAdd(event: Event): void
         {
-            this.rootClass = MovieClip(this.stage.getChildAt(0));
+            rootClass = MovieClip(this.stage.getChildAt(0));
         }
 
 		public function onRemove(event: Event): void 
