@@ -59,7 +59,7 @@
 
 		public function onAdd(event: Event): void
         {
-            rootClass = MovieClip(this.stage.getChildAt(0));
+            this.rootClass = MovieClip(this.stage.getChildAt(0));
         }
 
 		public function onRemove(event: Event): void 
