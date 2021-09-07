@@ -44,6 +44,7 @@
 		
 		internal function Room1()
         {
+			MonsterAggresive1();
             stop();
         }
 
@@ -66,5 +67,20 @@
 		{
 			SoundMixer.stopAll();
 		}
+
+		internal function MonsterAggresive1() 
+		{
+			Aggresive1.strMonsters = [1];
+
+			// (1, 2, 3, 4) = MonsterID from the map
+			// Aggresive1.strMonsters = [
+			// 	1, 2, 3, 4
+			// ];
+		}
+
+		public var Aggresive1: MovieClip;
+		// public var Aggresive2: MovieClip;
+		// public var Aggresive3: MovieClip;
+		// public var Aggresive4: MovieClip;
 	}
 }

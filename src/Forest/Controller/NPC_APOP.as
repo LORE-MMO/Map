@@ -51,9 +51,10 @@
 
         public function frame1()
         {
+            this.setupVisibility();
             this.rootClass = MovieClip(stage.getChildAt(0));
             this.objSettings = this.NPCS[this.rootClass.world.map.targetNPC].Dialogue;
-            this.setupVisibility();
+            // this.setupVisibility();
             this.createTexts();
             this.createButtons();
         }
