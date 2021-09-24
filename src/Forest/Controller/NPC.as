@@ -1,4 +1,4 @@
-package Controller
+﻿package Controller
 {
     import fl.motion.*;
     import flash.display.*;
@@ -8,11 +8,10 @@ package Controller
     dynamic public class NPC extends MovieClip
     {
         public var rootClass:MovieClip;
-        private var parameters:Array;
         public var isProp:Boolean = true;
-        public var targetNPC:Object;
         public var btnButton:SimpleButton;
         public var npcDisplay:DisplayObject;
+        private var parameters:Array;
 
         public function NPC()
         {
@@ -42,9 +41,12 @@ package Controller
             }
 
             this.btnButton.y = this.npcDisplay.y - 75;
-            buttonMode = false; // true
-            this.npcDisplay.addEventListener(MouseEvent.MOUSE_OVER, this.onOver);
-            this.npcDisplay.addEventListener(MouseEvent.MOUSE_OUT, this.onOut);
+            if (this.rootClass != root) {
+                this.objSettings = this.rootClass.world.map.NPCS[this.parameters[0]].Dialogue;
+            }
+            buttonMode = true; // true
+            // this.npcDisplay.addEventListener(MouseEvent.MOUSE_OVER, this.onOver);
+            // this.npcDisplay.addEventListener(MouseEvent.MOUSE_OUT, this.onOut);
             this.addEventListener(MouseEvent.MOUSE_DOWN, this.onClick);
         }
 
