@@ -14,10 +14,10 @@
 		public var mapInfo: Object;
 
         public var NPCS: Object = {
-            Zueira:{
+            Eson:{
 				Dialogue:{
-					Name:"Zueira",
-					Subtitle:"Princess",
+					Name:"Eson",
+					Subtitle:"The Celestial",
 					Context:[
 						"test"
 					],
