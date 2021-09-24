@@ -6,44 +6,6 @@
 
     dynamic public class NPC_APOP extends MovieClip
     {
-        /**
-         * This is where you can add your NPC(s).
-         *
-         * @var array
-         */
-		public var NPCS: Object = {
-            // NPC Zueira
-            Zueira:{
-				Dialogue:{
-					Name:"Zueira",
-					Subtitle:"Princess",
-					Context:[
-						"test"
-					],
-                    Buttons:[{
-						Name:"Starter Shop", 
-						Action:"Shop", 
-						Value:1
-					}, {
-                        Name:"Quest", 
-						Action:"Quest", 
-						Value:"1,2,3"
-                    }]
-				}
-			},
-
-            // NPC Risky
-            Risky: {
-                Dialogue:{
-				    Name:"Risky",
-					Subtitle:"test",
-					Context:[
-						"test"
-					]
-				}
-            }
-        };
-
         public function NPC_APOP()
         {
             addFrameScript(0, this.frame1);
@@ -51,10 +13,9 @@
 
         public function frame1()
         {
-            this.setupVisibility();
             this.rootClass = MovieClip(stage.getChildAt(0));
-            this.objSettings = this.NPCS[this.rootClass.world.map.targetNPC].Dialogue;
-            // this.setupVisibility();
+            this.objSettings = this.rootClass.world.map.NPCS[this.rootClass.world.map.targetNPC].Dialogue;
+            this.setupVisibility();
             this.createTexts();
             this.createButtons();
         }
@@ -90,19 +51,23 @@
 
         public function onClickGeneral(event: MouseEvent): void
         {
-            var _loc_2:* = undefined;
-            var _loc_3:* = undefined;
+            var Button:* = undefined;
+            var Action:* = undefined;
+            var Value:* = undefined;
             this.rootClass.mixer.playSound("Click");
             switch(event.currentTarget.name) {
                 case "btnButton0":
-                    _loc_2 = event.currentTarget.name.replace("btnButton", "");
-                    _loc_3 = this.objSettings.Buttons[_loc_2].Action;
-                    switch(_loc_3) {
+                case "btnButton1":
+                case "btnButton2":
+                    Button = event.currentTarget.name.replace("btnButton", "");
+                    Action = this.objSettings.Buttons[Button].Action;
+                    Value = this.objSettings.Buttons[Button].Value;
+                    switch(Action) {
                         case "Shop":
-                            this.rootClass.world.sendLoadShopRequest(this.objSettings.Buttons[_loc_2].Value);
+                            this.rootClass.world.sendLoadShopRequest(Value);
                             break;
                         case "Quest":
-                            this.rootClass.world.showQuests(this.objSettings.Buttons[_loc_2].Value, "q");
+                            this.rootClass.world.showQuests(Value, "q");
                             break;
                         case "Auction":
                             this.rootClass.toggleAuction();
@@ -115,6 +80,12 @@
                             break;
                         case "Space":
                             this.rootClass.world.loadMovieFront(this.rootClass.bagSpace, "Inline Asset");
+                            break;
+                        case "Navigation":
+                            rootClass.world.moveToCell(Value.Cell, Value.Pad);
+                            break;
+                        case "Navigator":
+                            rootClass.world.gotoTown(Value.Town, Value.Cell, Value.Pad);
                             break;
                         default:
                             break;

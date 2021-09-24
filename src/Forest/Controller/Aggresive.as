@@ -7,8 +7,7 @@ package Controller
 
     public dynamic class Aggresive extends MovieClip 
     {
-        public var rootClass:*;
-        // public var rootClass:Object;
+        public var rootClass: Object;
 
         public function Aggresive()
         {
@@ -21,18 +20,16 @@ package Controller
             var isAggresive:* = true;
             var MonsterMapID:* = 0;
             var AggresiveMonsters:* = new Array();
-            if (this.strMonsters.length > 0) {
+            if (this.strMonsters.length > 0){
                 while ((((MonsterMapID < this.strMonsters.length)) && (isAggresive))) {
                     Monster = rootClass.world.getMonster(this.strMonsters[MonsterMapID]);
-                    if (Monster.pMC == null) {
+                    if (Monster.pMC == null){
                         isAggresive = false;
                     };
-
                     AggresiveMonsters[MonsterMapID] = this.strMonsters[MonsterMapID];
                     MonsterMapID = (MonsterMapID + 1);
                 };
-
-                if (isAggresive) {
+                if (isAggresive){
                     rootClass.world.aggroMons(AggresiveMonsters);
                     removeEventListener(Event.ENTER_FRAME, onEnter);
                 };
@@ -47,6 +44,5 @@ package Controller
             addEventListener(Event.ENTER_FRAME, onEnter, false, 0, true);
 			visible = false;
         }
-
     }
 }
