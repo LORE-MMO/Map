@@ -32,18 +32,12 @@ package Intro
             // rootClass.hideInterface();
             // mcClickArea.addEventListener(MouseEvent.CLICK, onMouseClickArea);
             addFrameScript(
-                0, Intro1,
-                9, Intro2,
+                0,  Intro1,
+                9,  Intro2,
                 19, Intro3,
                 29, Intro4,
                 39, Intro5,
-                49, Intro6,
-                50, Intro7,
-                51, Intro8,
-                52, Intro9,
-                53, Intro10,
-                54, Intro11,
-                55, Blank
+                49, Blank
             );
         }
 
@@ -97,47 +91,47 @@ package Intro
             stop();
         }
 
-        internal function Intro6()
-        {
-            rootClass.stage.removeEventListener(MouseEvent.CLICK, onMousePlay);
-            rootClass.stage.addEventListener(MouseEvent.CLICK, onMouseNext);
+        // internal function Intro6()
+        // {
+        //     rootClass.stage.removeEventListener(MouseEvent.CLICK, onMousePlay);
+        //     rootClass.stage.addEventListener(MouseEvent.CLICK, onMouseNext);
 
-            playerName = rootClass.world.myAvatar.objData.strUsername;
-            txtInit.text = "Hey " + playerName + ", Are you alright?";
-            stop();
-        }
+        //     playerName = rootClass.world.myAvatar.objData.strUsername;
+        //     txtInit.text = "Hey " + playerName + ", Are you alright?";
+        //     stop();
+        // }
 
-        internal function Intro7()
-        {
-            txtInit.text = "Do you still remember me? i'm Eson";
-            stop();
-        }
+        // internal function Intro7()
+        // {
+        //     txtInit.text = "Do you still remember me? i'm Eson";
+        //     stop();
+        // }
 
-        internal function Intro8()
-        {
-            txtInit.text = "luckily you didn't lose all your memories, we have arrived at Annwn";
-            stop();
-        }
+        // internal function Intro8()
+        // {
+        //     txtInit.text = "luckily you didn't lose all your memories, we have arrived at Annwn";
+        //     stop();
+        // }
 
-        internal function Intro9()
-        {
-            txtInit.text = "You still remember what they ordered you, right? now we're in human form, but maybe with the current strength it's still enough to protect yourself.";
-            stop();
-        }
+        // internal function Intro9()
+        // {
+        //     txtInit.text = "You still remember what they ordered you, right? now we're in human form, but maybe with the current strength it's still enough to protect yourself.";
+        //     stop();
+        // }
 
-        internal function Intro10()
-        {
-            txtInit.text = "You can leave now, but remember this world is not the same as in the celestial, and your life could be in danger. be careful when you meet the Zeniths.";
-            // rootClass.sfc.sendXtMessage("zm", "acceptQuest", [1], "str", -1);
-            // rootClass.sfc.sendXtMessage("zm", "tryQuestComplete", [1, -1, false, "wvz"], "str", -1);
-            stop();
-        }
+        // internal function Intro10()
+        // {
+        //     txtInit.text = "You can leave now, but remember this world is not the same as in the celestial, and your life could be in danger. be careful when you meet the Zeniths.";
+        //     // rootClass.sfc.sendXtMessage("zm", "acceptQuest", [1], "str", -1);
+        //     // rootClass.sfc.sendXtMessage("zm", "tryQuestComplete", [1, -1, false, "wvz"], "str", -1);
+        //     stop();
+        // }
 
-        internal function Intro11()
-        {
-            txtInit.text = "I heard you can look for your needs such as food and others in the city, don't worry I will always keep an eye on you. I have given you a friend who will always be by your side and help you. I will go to do my duty, Take care of yourself-";
-            stop();
-        }
+        // internal function Intro11()
+        // {
+        //     txtInit.text = "I heard you can look for your needs such as food and others in the city, don't worry I will always keep an eye on you. I have given you a friend who will always be by your side and help you. I will go to do my duty, Take care of yourself-";
+        //     stop();
+        // }
 
         internal function Blank()
         {
