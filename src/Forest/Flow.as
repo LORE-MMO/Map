@@ -7,7 +7,7 @@
 
 	dynamic public class Flow extends MovieClip 
 	{
-		public var rootClass:MovieClip;
+		public var rootClass: MovieClip;
 		public var sessionNames: Array;
         public var sessionQty: Array;
 		public var questVal: int;
