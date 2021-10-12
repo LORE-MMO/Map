@@ -8,16 +8,26 @@
     {
         public function NPC_APOP()
         {
-            addFrameScript(0, this.frame1);
+            addFrameScript(
+                0, Wait,
+                1, Init
+            );
         }
 
-        public function frame1()
+        public function Wait()
         {
             this.rootClass = MovieClip(stage.getChildAt(0));
             this.objSettings = this.rootClass.world.map.NPCS[this.rootClass.world.map.targetNPC].Dialogue;
+        }
+
+        public function Init()
+        {
+            // this.rootClass = MovieClip(stage.getChildAt(0));
+            // this.objSettings = this.rootClass.world.map.NPCS[this.rootClass.world.map.targetNPC].Dialogue;
             this.setupVisibility();
             this.createTexts();
             this.createButtons();
+            stop();
         }
 
         public function setupVisibility()
